@@ -1,0 +1,12 @@
+@if (!isAuthenticated) {
+  <app-login
+    [users]="allUsers"
+    (loginSuccess)="onLoginSuccess($event)"
+  ></app-login>
+} @else {
+  <app-workspace
+    [initialUser]="currentUser"
+    [initialEmail]="currentEmail"
+    (logout)="onLogout()"
+  ></app-workspace>
+}
